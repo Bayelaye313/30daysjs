@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ispalindrome</title>
+</head>
+<body>
+
+    <script>
+        /*une fonction qui dit si un mot est un palindrome ou pas*/
+                /*function isPalindrom(word){
+                    const reverseWord = word.split('').reverse().join('');
+                        
+                    return word.toUpperCase() === reverseWord.toUpperCase()
+
+                }
+                console.log(isPalindrom('Bonjour')) // false
+                */
+
+
+        /*calcul moyennes des eleves; range par ordre de merite puis affiche top 3*/
+        /*const students = [
+                            {
+                                name: 'John',
+                                notes: [1, 20, 18, 19, 12]
+                            },
+                            {
+                                name: 'Jane',
+                                notes: [17, 18, 20, 13, 15]
+                            },
+                            {
+                                name: 'Sophie',
+                                notes: [17, 12, 14, 15, 13]
+                            },
+                            {
+                                name: 'Marc',
+                                notes: [2, 3, 5, 8, 9]
+                            },
+                            {
+                                name: 'Manon',
+                                notes: [18, 17, 18, 19, 12]
+                            }
+                        ]
+                        students.forEach((student)=>{
+                        
+                            let sum = 0;
+                            let moyenne = 0;
+                            const releve = student.notes;
+                            sum = releve.reduce((a,b) => a+b+0);
+                            moyenne = sum/releve.length;
+                            student.moyenne = moyenne;
+                            student.best = Math.max(...releve);
+                            student.worst = Math.min(...releve);
+                        });
+                        students.sort((a,b)=> b.moyenne - a.moyenne);
+                        const formatStudent = (student)=>{
+                            return `${student.name} avec une moyenne de ${student.moyenne}, 
+                            son pire note est (${student.worst})
+                            et sa meilleure note (${student.best})`
+                        }
+                        console.log(`Notre top eleve est : ${formatStudent(students[0])}`);
+                        */
+
+                        //Nous allons créer un système capable de calculer la fréquence des mots dans une chaine de caractère.
+
+                        function countOccurrences(arr) {
+                            const occurrences = {};
+                            arr.forEach(value => {
+                                occurrences[value] = (occurrences[value] || 0)+1
+
+                            });
+                            return occurrences;
+                            
+                          }
+                          
+                          // Example usage:
+                          const phrase = `Vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres.`
+                          function removePunctuation(sentence) {
+                            const regex = /[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]/g;
+                            return sentence.replaceAll(regex, '');
+                          }
+                          const newPhrase = removePunctuation(phrase).toLowerCase().split(/\s+/);
+                          const occurrences = countOccurrences(newPhrase);
+                          const wordArray = Object.entries(occurrences);
+                          wordArray.sort((a, b) => b[1] - a[1]);
+                          const tw = wordArray.slice(0, 3)
+                          .map(p=>p[0]);
+                          console.log(tw);
+
+                          
+
+    
+                        
+
+    </script>
+</body>
+</html>
