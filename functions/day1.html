@@ -44,9 +44,28 @@
                 }
                 return newtab.join(' ');
             }
-                const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
-                console.log(convertFirstLetter(mot));
-                
+                //const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
+                //console.log(convertFirstLetter(mot));
+
+            /*Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
+            Example string : 'Web Development Tutorial'
+            Expected Output : 'Development'*/
+
+            function longuer(strings){
+                const tab = strings.toLowerCase().split(' ');
+                let longest = tab[0];
+                for (i = 0; i < tab.length; i++)
+                {
+                    if(tab[i].length > longest.length)
+                    {
+                        longest = tab[i];
+                    }
+                }
+                        return longest;
+            }
+                const mot = 'alpha est Soit un Batard ou un Paparrazzi';
+                console.log(longuer(mot));
+
 
 
     </script>
