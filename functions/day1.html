@@ -29,8 +29,22 @@
             return word.split('').sort().join('');
         }
         // test 
-        const mot = 'alphablondy';
-        console.log(reorderAlpha(mot));
+        //const mot = 'alphablondy';
+        //console.log(reorderAlpha(mot));
+
+        /*Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into upper case.
+            Example string : 'the quick brown fox'
+            Expected Output : 'The Quick Brown Fox '*/
+            function convertFirstLetter(strings){
+                const tab = strings.toLowerCase().split(' ');
+                for(let i = 0; i < tab.length; i++){
+                   tab[i] = tab[i][0].toUpperCase() + tab[i].slice(1);
+                }
+                return tab.join(' ');
+            }
+                const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
+                console.log(convertFirstLetter(mot));
+
 
     </script>
 </body>
