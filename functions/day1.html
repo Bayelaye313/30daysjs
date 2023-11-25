@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funtions2</title>
+</head>
+<body>
+    <script>
+        /*Write a JavaScript function that reverses a number.*/
+        function reverseNumber(num){
+            num += "";
+            return num.split("").reverse().join("");
+        }
+        //test usage
+        //const fruh = 442233;
+        //console.log(reverseNumber(fruh));
+
+        /*Write a JavaScript function that generates all combinations of a string.*/
+        //Example string : 'dog'
+        //Expected Output : d,do,dog,o,og,g complicate for me
+
+          
+        /*Write a JavaScript function that returns a string that has letters in alphabetical order.
+        Example string : 'webmaster'
+        Expected Output : 'abeemrstw'*/
+
+        function reorderAlpha(word){
+            return word.split('').sort().join('');
+        }
+        // test 
+        const mot = 'alphablondy';
+        console.log(reorderAlpha(mot));
+
+    </script>
+</body>
+</html>
