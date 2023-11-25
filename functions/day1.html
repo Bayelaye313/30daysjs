@@ -8,63 +8,69 @@
 <body>
     <script>
         /*Write a JavaScript function that reverses a number.*/
-        function reverseNumber(num){
+        function reverseNumber(num)
+        {
             num += "";
             return num.split("").reverse().join("");
         }
-        //test usage
-        //const fruh = 442233;
-        //console.log(reverseNumber(fruh));
+            //test usage
+            //const fruh = 442233;
+            //console.log(reverseNumber(fruh));
 
         /*Write a JavaScript function that generates all combinations of a string.*/
-        //Example string : 'dog'
-        //Expected Output : d,do,dog,o,og,g complicate for me
+            //Example string : 'dog'
+            //Expected Output : d,do,dog,o,og,g complicate for me
 
           
         /*Write a JavaScript function that returns a string that has letters in alphabetical order.
-        Example string : 'webmaster'
-        Expected Output : 'abeemrstw'*/
+            Example string : 'webmaster'
+            Expected Output : 'abeemrstw'*/
 
-        function reorderAlpha(word){
+        function reorderAlpha(word)
+        {
             return word.split('').sort().join('');
         }
-        // test 
-        //const mot = 'alphablondy';
-        //console.log(reorderAlpha(mot));
+            // test 
+            //const mot = 'alphablondy';
+            //console.log(reorderAlpha(mot));
 
         /*Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into upper case.
             Example string : 'the quick brown fox'
             Expected Output : 'The Quick Brown Fox '*/
-            function convertFirstLetter(strings){
-                const newtab = [];
-                const tab = strings.toLowerCase().split(' ');
-                for(let i = 0; i < tab.length; i++){
-                   //tab[i] = tab[i][0].toUpperCase() + tab[i].slice(1);
-                   newtab.push(tab[i].charAt(0).toUpperCase() + tab[i].slice(1));
-                }
-                return newtab.join(' ');
+        function convertFirstLetter(strings)
+        {
+            const newtab = [];
+            const tab = strings.toLowerCase().split(' ');
+            for(let i = 0; i < tab.length; i++)
+            {
+                //tab[i] = tab[i][0].toUpperCase() + tab[i].slice(1);
+                newtab.push(tab[i].charAt(0).toUpperCase() + tab[i].slice(1));
             }
-                //const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
-                //console.log(convertFirstLetter(mot));
+            return newtab.join(' ');
+        }
+            //const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
+            //console.log(convertFirstLetter(mot));
 
-            /*Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
+        /*Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
             Example string : 'Web Development Tutorial'
             Expected Output : 'Development'*/
 
-            function longuer(strings){
-                const tab = strings.toLowerCase().split(' ');
-                let longest = tab[0];
-                for (i = 0; i < tab.length; i++)
+        function longuer(strings){
+            const tab = strings.toLowerCase().split(' ');
+            let longest = tab[0];
+            for (i = 0; i < tab.length; i++)
+            {
+                if(tab[i].length > longest.length)
                 {
-                    if(tab[i].length > longest.length)
-                    {
                         longest = tab[i];
-                    }
                 }
-                        return longest;
             }
-                const mot = 'alpha est Soit un Batard ou un Paparrazzi';
-                console.log(longuer(mot));
+                        return longest;
+        }
+            //usage
+            //const mot = 'alpha est Soit un Batard ou un Paparrazzi';
+            //console.log(longuer(mot));
+
 
 
 
