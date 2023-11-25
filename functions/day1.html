@@ -36,11 +36,13 @@
             Example string : 'the quick brown fox'
             Expected Output : 'The Quick Brown Fox '*/
             function convertFirstLetter(strings){
+                const newtab = [];
                 const tab = strings.toLowerCase().split(' ');
                 for(let i = 0; i < tab.length; i++){
-                   tab[i] = tab[i][0].toUpperCase() + tab[i].slice(1);
+                   //tab[i] = tab[i][0].toUpperCase() + tab[i].slice(1);
+                   newtab.push(tab[i].charAt(0).toUpperCase() + tab[i].slice(1));
                 }
-                return tab.join(' ');
+                return newtab.join(' ');
             }
                 const mot = 'alphablondy est Soit un Batard ou un MAGICIEN';
                 console.log(convertFirstLetter(mot));
