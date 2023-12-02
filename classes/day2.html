@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Classe</title>
+</head>
+<body>
+    
+    <script>
+        class Hero
+        {
+            constructor(name, level)
+            {
+                this.name = name;
+                this.level = level;
+            }
+            greet()
+            {
+                return (`${this.name}, says Hello.`);
+            }
+
+        }
+        class Mage extends Hero{
+            constructor(name, level, speel){
+                super(name, level);
+                this.speel = speel;
+            }
+        }
+        const hero1 = new Hero('Superman', 100);
+        const roiMage = new Mage('superMage', 1000, 'Luppin');
+        console.log(roiMage.greet());
+    </script>
+</body>
+</html>
