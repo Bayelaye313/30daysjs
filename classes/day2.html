@@ -8,6 +8,7 @@
 <body>
     
     <script>
+        //first Class
         class Hero
         {
             constructor(name, level)
@@ -29,7 +30,40 @@
         }
         const hero1 = new Hero('Superman', 100);
         const roiMage = new Mage('superMage', 1000, 'Luppin');
-        console.log(roiMage.greet());
+        //console.log(roiMage.greet());
+
+        //second class rectangle
+
+        class Rectangle{
+            constructor(longueur, largeur){
+                this.longueur = longueur;
+                this.largeur = largeur;
+            }
+            get perimeter(){
+                return ((this.largeur + this.longueur)*2)
+            }
+            get isValid(){
+                return (this.longueur > 0 && this.largeur > 0)
+            }
+            isBiggerThan(shape){
+                return this.perimeter > shape.perimeter
+            }
+        }
+        class carre extends Rectangle{
+            constructor(largeur){
+                super(largeur, largeur)
+            }
+        }
+        const r = new Rectangle(10, 20);
+        const c = new carre(10)
+        //console.log(r.perimeter) // 60.peri
+        //console.log(r.isValid)// true
+        //console.log(c.perimeter);//40
+        //console.log(c.isBiggerThan(r)); //false
+
+
+
+
     </script>
 </body>
 </html>
