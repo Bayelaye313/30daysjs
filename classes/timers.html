@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timers</title>
+</head>
+<body>
+
+    <script>
+        /*let i = 0;
+        const t = setInterval (() =>{
+            i++;
+            console.log("hello ");
+            if (i>=5)
+            {
+                clearInterval(t);
+            }
+        }, 1000)*/
+        /*function decompte(num){
+            console.log(num);
+           const t = setInterval(()=>{
+                num--;
+                console.log(num);
+                if (num === 0){
+                    clearInterval(t);
+                }
+    
+            }, 1000)
+        }*/
+        //another way
+                function decompte(num){
+                console.log(num);
+                if (num === 0){
+                    return
+                }
+           setTimeout(()=>{
+                decompte(num - 1 );
+    
+            }, 1000)
+        }
+
+
+        decompte(5);
+    </script>
+    
+</body>
+</html>

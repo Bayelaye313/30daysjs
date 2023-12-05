@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise((resolve, reject)=>{
+            //setTimeout(()=>resolve('done!'),2000);
+            const num = Math.random();
+            if(num >= 0.5){
+                resolve('valide!');
+            }else{
+                reject('wtf!');
+            }
+
+        });
+        function handleResolved(num){
+            console.log(num)
+        }
+        function handleRejected(reason){
+            console.error(reason)
+        }
+        promise.then(handleResolved, handleRejected)
+
+    </script>
+    
+</body>
+</html>
