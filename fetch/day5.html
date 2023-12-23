@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch api</title>
+</head>
+<body>
+
+
+
+    <script>
+        /* mathode get pour recuperer des donner
+        const apiUrl = "https://jsonplaceholder.typicode.com/posts/1";
+        async function fetchuser(apiUrl)
+        {
+            try{
+                const response = await fetch(apiUrl);
+                if(response.ok){
+                    const data = await response.json()
+                    console.log( data);  
+                } else {
+                    throw new Error (`request error! Status: ${response.status}`)
+                }
+            }catch(e)
+            {
+            console.error("erreur lors de la recuperation des donnes api", e)
+            }
+
+        }
+        fetchuser(apiUrl);
+         */
+
+         /*request post
+         const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+         const postdata = {
+            "body"  : "nouveau poste" ,
+            "userId": 1,
+            "title" : "include our own post",
+         };
+         async function fetchuser(apiUrl)
+         {
+             try{
+                 const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers:
+                    {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postdata)
+                 });
+                 if(response.ok)
+                 {
+                     const data = await response.json()
+                     console.log( data);  
+                 } else {
+                     throw new Error (`request error! Status: ${response.status}`)
+                 }
+             }catch(e)
+             {
+             console.error("erreur lors de la recuperation des donnes api", e)
+             }
+ 
+         }
+         fetchuser(apiUrl);
+         */
+ 
+    </script>
+    
+</body>
+</html>

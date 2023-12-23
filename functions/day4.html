@@ -47,7 +47,7 @@
           }
           
           fetchData();*/
-          const newurl = new URL("https://www.realtimecolors.com/?colors=180202-fafafa-ff6d4d-e6e6e5-d12600&fonts=Poppins-Poppins")
+          /*const newurl = new URL("https://www.realtimecolors.com/?colors=180202-fafafa-ff6d4d-e6e6e5-d12600&fonts=Poppins-Poppins")
           async function fetchIPAddress(domain) {
             const resp = await fetch(`https://cloudflare-dns.com/dns-query?name=${domain}&type=A`, {
               headers: {
@@ -69,7 +69,18 @@
             console.log(`found IP address for domain ${domain}: ${ipAddress}`)
           }
         }
-        logfetch();
+        logfetch();*/
+        const apiUrl = "https://jsonplaceholder.typicode.com/users";
+        fetch(apiUrl)
+        .then(r =>{
+          if(r.ok){
+            return r.json()
+          }
+          throw new Error(`requete api echouée! Status : ${r.status}`)
+
+        })
+        .then(data =>console.log(data))
+        .catch(e => console.error('erreur de request', e))
           
 </script>
 </body>
