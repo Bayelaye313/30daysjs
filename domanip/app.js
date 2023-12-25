@@ -1,5 +1,6 @@
 //dom manip
 
+/* select elem
 //getelementbyid
 
 const title = document.getElementById('main-heading');
@@ -23,3 +24,59 @@ const title = document.getElementById('main-heading');
  const arrayFromList = Array.from(listitem);
  const arrayothermethod = [...itemlist];
  console.log(arrayothermethod);
+ */
+
+/* styling element 
+
+const title = document.querySelector('#main-heading');
+title.style.color = 'red';
+
+const listItems = document.querySelectorAll('li.list-items');
+listItems.forEach(item => {
+    item.style.fontSize = '2rem';
+});
+*/
+
+/*creating element
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
+//adding element
+ul.append(li);
+
+//modifying the text
+li.innerText = ('Last Kingdom');
+
+//modifying attribut && classe
+
+li.setAttribute('id', '#main-heading');
+li.removeAttribute('id');
+console.log(li.getAttribute('id')); //null
+
+li.classList.add('list-items');
+li.classList.remove('list-items');
+console.log(li.classList.contains('list-items')) // false
+
+//remove element
+li.remove();
+*/
+
+/* Parent, child Node traversal
+
+let ul = document.querySelector('ul');
+
+console.log(ul.parentNode);
+console.log(ul.childNodes);
+console.log(ul.firstChild);
+//ul.childNodes[1].style.backgroundColor = 'green';
+console.log(ul.children);
+console.log(ul.firstElementChild);
+
+
+//sibling node traversal
+let ul = document.querySelector('ul');
+console.log(ul.previousSibling);
+console.log(ul.nextSibling);
+
+const div = document.querySelector('div');
+console.log(div.childNodes);
+*/

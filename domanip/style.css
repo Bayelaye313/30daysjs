@@ -15,7 +15,7 @@ h1{
     margin-bottom: 10px;
 
 }
-.container{
+.container, .containeur{
     color: black;
     border: 1px solid white;
     padding: 1.6rem;
