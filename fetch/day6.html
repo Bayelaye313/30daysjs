@@ -15,8 +15,31 @@
         }
         const today = new Date();
         console.log(today);
-        const toom = addDays(today, 1);
-        console.log(toom);
+
+
+        const MONTHS = 'months';
+        const DAYS = 'days';
+        const YEARS = 'years';
+        function addInterval(date, n, unit)
+        {
+            const newDate = new Date(date.getTime());
+            switch(unit)
+            {
+                case DAYS: 
+                newDate.setTime(date.getDay() + n)
+                break;
+                case MONTHS: 
+                newDate.setMonth(date.getMonth() + n)
+                break;
+                case YEARS: 
+                newDate.setFullYear(date.getFullYear() + n)
+                break;
+            }
+            return newDate;
+
+        }
+        const futur = addInterval(today, 3, YEARS);
+        console.log(futur);
     </script>
     
 </body>
