@@ -80,3 +80,24 @@ console.log(ul.nextSibling);
 const div = document.querySelector('div');
 console.log(div.childNodes);
 */
+
+// EventListener
+
+//element.addEventListener('click', function)
+
+const buttonTwo = document.querySelector('.btn-2');
+
+function btnalert(){
+    alert('I love js');
+}
+buttonTwo.addEventListener('click', btnalert);
+
+//mouseover
+
+const newbgcolor = document.querySelector('.box-3');
+
+function bgchanger(){
+    newbgcolor.style.backgroundColor = 'blue'
+};
+
+newbgcolor.addEventListener('mouseover', bgchanger);

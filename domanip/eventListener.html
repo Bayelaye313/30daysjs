@@ -28,7 +28,7 @@
             display: flex;
             justify-content: space-around;
         }
-        .containeur{
+        .boxes{
             position: relative;
             height: 100px;
             width: 100px;
@@ -46,24 +46,25 @@
             text-align: center;
             padding: 0.5em;
             transform: translateX(50%);
-            border-radius: 10px;        
+            border-radius: 10px;  
+            cursor: pointer;      
         }
     </style>
 </head>
 <body >
     <h1 id="main-head"> Event Listeners</h1>
     <div class="contain" >
-        <div class="containeur">
-            <h2>Example 1</h2>
+        <div class="boxes box-1">
+            <h2 id="head">Example 1</h2>
             <button>Enter</button>
         </div>
-        <div class="containeur">
-            <h2>Example 2</h2>
-            <button>Enter</button>
+        <div class="boxes box-2">
+            <h2 id="head">Example 2</h2>
+            <button class="btn-2">Enter</button>
         </div>
-        <div class="containeur">
-            <h2>Example 3</h2>
-            <button>Enter</button>
+        <div class="boxes box-3 ">
+            <h2 id="head">Example 3</h2>
+            <button class="btn-3">Enter</button>
         </div>
     
     
