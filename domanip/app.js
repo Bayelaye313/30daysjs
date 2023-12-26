@@ -81,7 +81,7 @@ const div = document.querySelector('div');
 console.log(div.childNodes);
 */
 
-// EventListener
+/*EventListener
 
 //element.addEventListener('click', function)
 
@@ -101,3 +101,13 @@ function bgchanger(){
 };
 
 newbgcolor.addEventListener('mouseover', bgchanger);
+
+// event reveal
+const revealBtn = document.querySelector('.reveal-btn');
+const hiddencontent = document.querySelector('.hidden-content');
+
+function revelator(){
+        hiddencontent.classList.toggle('reveal-btn');
+}
+revealBtn.addEventListener('click', revelator)
+*/
