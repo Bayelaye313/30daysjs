@@ -111,3 +111,53 @@ function revelator(){
 }
 revealBtn.addEventListener('click', revelator)
 */
+
+/*event probagation
+
+window.addEventListener('click', function(){
+    console.log('window');
+});
+document.addEventListener('click', function(){
+    console.log('document');
+});
+document.querySelector('.div-1').addEventListener('click', function(event){
+    event.stopPropagation();
+    console.log('DIV1');
+});
+document.querySelector('.div-2').addEventListener('click', function(){
+    console.log('DIV2');
+
+});
+//preventdefault block page reloading
+document.querySelector('.button').addEventListener('click', function(e){
+    e.preventDefault();
+    console.log(e.target.innerText = 'button clicked!');
+});
+*/
+/*Event Delegation */
+
+document.getElementById('sports').addEventListener('click', function(e)
+{
+            const target = e.target;
+            if(target.matches('LI')) //.matches('li) or .tagName === 'li'
+            {
+                console.log(target.textContent, 'is clicked!');
+
+                if(target.style.backgroundColor === '')
+                {
+                    target.style.backgroundColor = 'lightGrey'
+                } else{
+                    target.style.backgroundColor = ''
+                }
+
+            }
+
+});
+            //all child herit the event example
+            // Creating a new li element
+            const sports = document.querySelector('#sports');
+            const newSport = document.createElement('li');
+            newSport.innerText = 'boxing'
+            newSport.setAttribute('id', 'boxing');
+            // Appending the new li element to the sports ul
+            sports.appendChild(newSport);
