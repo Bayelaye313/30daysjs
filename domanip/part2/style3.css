@@ -1,0 +1,64 @@
+/* ######################
+
+        Accordion Styling
+
+    #####################*/
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lato', sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background-color: rgb(98, 128, 16);
+    }
+    .accordion{
+        width: 65%;
+        background-color: white;
+        padding: 36px;
+        border-radius: 30px;
+    }
+    .accordion .accordion-title{
+        font-family: 'Ubuntu';
+        margin-bottom: 36px;
+        text-align: center;
+    }
+    .content-container .question{
+        padding: 18px 0px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        cursor: pointer;
+        border-bottom: 1px solid black;
+        position: relative;
+    }
+    .content-container .question::after{
+        position: absolute;
+        content: '+';
+        right: -5px;
+    }
+    .content-container .answer{
+        padding-top: 18px;
+        font-size: 18px;
+        line-height: 1.5;
+        height: 0px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .accordion-item.active .answer {
+        height: 150px; /* Afficher la réponse lorsque l'élément est actif */
+    }
+    .accordion-item.active .question {
+        font-size: 18px;
+        transition: .5s;
+    }
+    .content-container.active .question::after{
+        font-size: 30px;
+        content: '-';
+        transition: .5s;
+    }
+
