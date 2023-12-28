@@ -2,10 +2,10 @@
 
 const question = document.querySelector(".question");
 const answer = document.querySelector(".answer");
-const accordion = document.querySelectorAll(".accordion-item");
+const accordionItems = document.querySelectorAll(".accordion-item");
 
-accordion.forEach(item => {
-    item.addEventListener('click', function(){
-        this.classList.toggle('active')
+accordionItems.forEach(items => {
+    items.addEventListener('click', function(){
+        this.classList.toggle('active');
     })
 })
