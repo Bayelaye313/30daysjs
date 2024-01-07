@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Challenge</title>
+</head>
+<body>
+    <h1>Array Challenge</h1>
+    
+    <script>
+        //const arr = [1,2,3,4,5]; expected: [6,5,4,3,2,1,0]
+
+        const arr = [1,2,3,4,5];
+        arr.unshift(0);
+        arr.push(6);
+        const x = arr.reverse();
+        console.log(x);
+
+        /*//combine arr1 arr2 to arr3 and no doublon
+
+        const arr1 = [1,2,3,4,5];
+        const arr2 = [5,6,7,8,9,10];
+
+        const arr3 = arr1.concat(arr2);
+
+        for(let i = 0; i < arr3.length; i++){
+            for(let j = i+1; j < arr3.length; j++){
+                if(arr3[i] === arr3[j]){
+                    arr3.splice(arr3[j],1);
+                    j--;
+                }
+            }
+        }
+        console.log(arr3);
+        */
+
+        //using set and spread array
+        const arr1 = [1,2,3,4,5,6];
+        const arr2 = [5,6,7,8,9,9,10];
+
+        const set = new Set([...arr1, ...arr2]);
+        //const arr3 = Array.from(set);
+        const arr3 = [...set];
+        console.log(arr3)
+
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
