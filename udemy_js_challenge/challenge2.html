@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Challenge</title>
+</head>
+<body>
+    <h1>Number Challenge</h1>
+    
+    <script>
+        //random x [1-100]
+        //random y [1-50]
+        //print sum, diff, div, mul; modulo 
+        let x = Math.floor(Math.random()*100) + 1;
+        let y = Math.floor(Math.random()*50) + 1;
+        function sum(x,y){
+            return x+y;
+        }
+        function diff(x,y){
+            return x-y;
+        }
+        function mul(x,y){
+            return x*y;
+        }
+
+        function div(x,y){
+            return x/y;
+        }
+        function mod(x,y){
+            return x%y;
+        }
+        console.log(`${x} + ${y} = ${sum(x,y)}`);
+        console.log(`${x} - ${y} = ${diff(x,y)}`);
+        console.log(`${x} * ${y} = ${mul(x,y)}`);
+        console.log(`${x} / ${y} = ${div(x,y)}`);
+        console.log(`${x} % ${y} = ${mod(x,y)}`);
+    </script>
+</body>
+</html>
