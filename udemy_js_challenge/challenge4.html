@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Challenge</title>
+</head>
+<body>
+    <h1>Object Challenge</h1>
+    
+    <script>
+        const library = [{'title': 'petit prince',
+                          'author': 'St Exupery',
+                          status:
+                          {
+                            own: true,
+                            reading: false,
+                            read: false
+                          }
+                        },
+                        {'title': 'Art de parler en public',
+                          'author': 'Dale Carnegie',
+                          status:
+                          {
+                            own: true,
+                            reading: false,
+                            read: false
+                          }
+                        },
+                        {'title': 'la chevre de ma mère',
+                          'author': 'Kaniama',
+                          status:
+                          {
+                            own: true,
+                            reading: false,
+                            read: false
+                          }
+                        },
+                    ];
+                    //turn all read status true
+                    for (let i = 0; i <library.length; i++){
+                      library[i].status.read = true
+                    }
+                    //destructuring first title
+                    const {title: firstBook} = library[0];
+
+                    //turning into json string
+
+                    const strLibrary = JSON.stringify(library)
+                    console.log(firstBook)
+                    //console.log(strLibrary)
+    </script>
+</body>
+</html>
