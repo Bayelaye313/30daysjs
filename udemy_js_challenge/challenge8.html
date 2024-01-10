@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array methods Challenge</title>
+</head>
+<body>
+    <h1>Array methods Challenge</h1>
+    
+    <script>
+      /*
+        const People =[
+        {
+            firstName:"John",
+            lastName: "Doe",
+            email: 'baye05@gmail.com',
+            phone: '784514566',
+            age: 30
+          },
+          {
+            firstName:"laye",
+            lastName: "Dob",
+            email: 'laye05@gmail.com',
+            phone: '783564566',
+            age: 25
+          },
+          {
+            firstName:"Sara",
+            lastName: "laobe",
+            email: 'laobe05@gmail.com',
+            phone: '788564566',
+            age: 20
+          },
+
+          {
+            firstName:"Jams",
+            lastName: "Deen",
+            email: 'jams05@gmail.com',
+            phone: '789514566',
+            age: 19
+          }];
+          const youngpeople = People
+          .filter(item => item.age<= 25)
+          .map(item=>({
+            name: item.firstName+' '+item.lastName,
+            mail: item.email
+          }));
+          console.log(youngpeople);
+          //filter and reduce positivenum
+          const numbers = [2, -30, 50, 20, -12, -9, 2];
+
+          const positiveSum =
+            numbers
+            .filter(num => num>0)
+            .reduce((i, j)=> i+j, 0)
+    
+          console.log(positiveSum)
+          */
+          //capitalizewords
+          const words = ['coder', 'programmer', 'developer']
+          const capitalizewords = words
+          .map(items => items.charAt(0).toUpperCase()+ items.slice(1, items.length));
+          console.log(capitalizewords)
+        </script>
+</body>
+</html>
