@@ -83,3 +83,22 @@ checkboxinput.addEventListener('change', oncheck)
 iteminput.addEventListener('focus', onfocus);
 iteminput.addEventListener('blur', onblur)
 */
+
+const submit = document.querySelector('.btn')
+const form = document.querySelector('#item-form');
+
+function onsubmit(e) {
+    const item = document.querySelector('#item-input').value;
+    const priority = document.getElementById('priority-input').value
+    e.preventDefault();
+    if (item === '' || priority == 0) {
+        alert('remplir tt les cages stp')
+        return;
+    } else {
+        console.log(item, priority)
+
+    }
+    
+}
+
+form.addEventListener('submit', onsubmit)
