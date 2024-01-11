@@ -12,7 +12,7 @@
     const third = document.querySelector('li:first-child');
 
     insertAfter(itemBefore, third);
-*/
+
 //replace element
 
 function replaceFirstElement(){
@@ -30,6 +30,8 @@ function replaceChildHead(){
     h2.textContent = 'for 2ndh shopping list'
     header.replaceChild(h2, h1)
 }
+
+//removing
 function removeButton(){
     const btnToRemove = document.querySelector('#clear');
     btnToRemove.remove();
@@ -46,3 +48,38 @@ function removeItem(itemNumber){
     ul.removeChild(items);
 }
 removeItem(1);
+
+//form events
+
+const iteminput = document.querySelector('#item-input');
+const priorityinput = document.querySelector('#priority-input');
+const checkboxinput = document.querySelector('#checkbox');
+
+const header = document.querySelector('h1');
+
+function oninput(e){
+    header.textContent = e.target.value
+}
+function oncheck(e){
+    const isChecked = e.target.checked
+    header.textContent = isChecked ? 'checked': 'not checked';
+}
+function onfocus() {
+iteminput.style.outlineStyle = 'solid';
+iteminput.style.outlineWidth = '2px';
+iteminput.style.outlineColor = 'green';
+
+    
+}
+function onblur() {
+    iteminput.style.outlineStyle = 'none';
+
+}
+
+iteminput.addEventListener('input', oninput)
+priorityinput.addEventListener('input', oninput)
+checkboxinput.addEventListener('change', oncheck)
+
+iteminput.addEventListener('focus', onfocus);
+iteminput.addEventListener('blur', onblur)
+*/
