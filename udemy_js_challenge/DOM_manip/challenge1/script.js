@@ -116,9 +116,13 @@ const itemList = document.getElementById('item-list');
 //event listeners
 function addItem(e){
     e.preventDefault();
-    const newItem = document.createElement('li');
     const inputtext= itemInput.value;
-    
+
+    if(inputtext ===''){
+        alert('Veillez entrez un élément')
+        return;
+    }
+    const newItem = document.createElement('li');
     //create buttons
     const removeButton = document.createElement('button');
     removeButton.className = 'remove-item btn-link text-red';
