@@ -82,7 +82,7 @@ checkboxinput.addEventListener('change', oncheck)
 
 iteminput.addEventListener('focus', onfocus);
 iteminput.addEventListener('blur', onblur)
-*/
+
 
 const submit = document.querySelector('.btn')
 const form = document.querySelector('#item-form');
@@ -101,4 +101,37 @@ function onsubmit(e) {
     
 }
 
-form.addEventListener('submit', onsubmit)
+form.addEventListener('submit', onsubmit);
+
+*/
+
+
+//starting project
+
+//add item
+const itemForm = document.getElementById('item-form');
+const itemInput = document.getElementById('item-input');
+const itemList = document.getElementById('item-list');
+
+//event listeners
+function addItem(e){
+    e.preventDefault();
+    const newItem = document.createElement('li');
+    const inputtext= itemInput.value;
+    
+    //create buttons
+    const removeButton = document.createElement('button');
+    removeButton.className = 'remove-item btn-link text-red';
+    const icone = document.createElement('i');
+    icone.className = 'fa-solid fa-xmark';
+
+
+    removeButton.appendChild(icone);
+    newItem.appendChild(document.createTextNode(inputtext));
+    newItem.appendChild(removeButton);
+
+    itemList.appendChild(newItem)
+}
+
+itemForm.addEventListener('submit', addItem);
+
