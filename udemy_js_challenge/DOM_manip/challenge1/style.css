@@ -95,7 +95,9 @@ header h1 {
 .btn-clear:hover {
   background-color: #f1f1f1;
 }
-
+.edit-mode{
+  color: aqua;
+}
 .text-red {
   color: red;
 }
