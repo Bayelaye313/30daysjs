@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task List</title>
+        <!--StyleSheet-->
+        <link rel="stylesheet" href="style.css">
+        <!--Global font Links-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat:ital@1&family=Roboto:wght@300;400;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <!--Font Awasome-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Task List</h1>
+      </header>
+      <main>
+        <section class="input-todo-card">
+          <button id="add-todo-btn">
+            <i class='bx bx-plus-circle bx-lg' id="plus"></i>
+          </button>
+          <input
+            id="input-todo"
+            type="text"
+            placeholder="What's your next task?">
+        </section>
+        <section id="todos-container">
+          <h2>Your tasks</h2>
+          <ul id="todos-list">
+            <!-- The todos will be inserted here-->
+          </ul>
+        </section>
+        <br>
+        <p align=center>A Javascript <i class="fab fa-js-square"></i> project for Javascript  Basics tutorial on StackUp | UpUpStackUp | 30DaysofWeb2</p>
+      </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
