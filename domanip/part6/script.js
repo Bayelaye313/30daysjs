@@ -1,8 +1,13 @@
 const form = document.querySelector('form');
 const inputTask = document.querySelector('.form-control');
 const lisTask = document.querySelector('.list-group');
-const btngroup  = document.querySelector('.btn-group');
-const localStorageKey = 'items'
+const btngroup = document.querySelector('.btn-group');
+const localStorageKey = 'items';
+
+function isTaskDone(taskText) {
+    const items = fromLocalStorage();
+    return items.includes(taskText);
+}
 
 function createTaskElement(taskText) {
     const newTask = document.createElement('li');
@@ -11,6 +16,7 @@ function createTaskElement(taskText) {
     const inputCheck = document.createElement('input');
     inputCheck.type = 'checkbox';
     inputCheck.className = 'form-check-input';
+    inputCheck.checked = isTaskDone(taskText);
 
     const checkLabel = document.createElement('label');
     checkLabel.className = 'ms-2 form-check-label';
@@ -41,56 +47,59 @@ function addToDom(e) {
         inputTask.value = ''; // Clear the input value after adding a task
     }
 }
-function addToLocalStorage(newtask){
-    let newItem = fromlocalstrg();
-    newItem.push(newtask)
-    localStorage.setItem('items', JSON.stringify(newItem))
 
+function addToLocalStorage(newTask) {
+    let items = fromLocalStorage();
+    items.push(newTask);
+    localStorage.setItem(localStorageKey, JSON.stringify(items));
 }
-function fromlocalstrg(){
+
+function fromLocalStorage() {
     try {
-            let instrg = JSON.parse(localStorage.getItem(localStorageKey))??[];
-            return instrg
-        } catch (error) {
-            console.log('Erreur on parsing: ', error)
-            return [] 
+        return JSON.parse(localStorage.getItem(localStorageKey)) ?? [];
+    } catch (error) {
+        console.error('Error on parsing:', error);
+        return [];
     }
 }
+
 function improveUi() {
-    const taskList = document.querySelector('.btn-group')
+    const taskList = document.querySelector('.btn-group');
     taskList.style.display = lisTask.children.length > 0 ? 'flex' : 'none';
 }
-function Onclicktask(e){
-    const totrash = e.target.parentElement.classList.contains('btn-danger')
+
+function onClickTask(e) {
+    const toTrash = e.target.parentElement.classList.contains('btn-danger');
     const task = e.target.parentElement.parentElement;
-    if (totrash) {
-        removeTask(task) 
+    if (toTrash) {
+        removeTask(task);
     }
 }
-function removeTask(task){
-    if(confirm('are you sure?')){
+
+function removeTask(task) {
+    if (confirm('Are you sure?')) {
         task.remove();
-        removeItemOnstrg(task.textContent);
-        improveUi()
+        removeItemFromLocalStorage(task.textContent);
+        improveUi();
         return;
     }
 }
-function removeItemOnstrg(task){
-    let instrg = fromlocalstrg();
-    instrg = instrg.filter(t => t !== task);
-    localStorage.setItem('items', JSON.stringify(instrg))
+
+function removeItemFromLocalStorage(task) {
+    let items = fromLocalStorage();
+    items = items.filter(t => t !== task);
+    localStorage.setItem(localStorageKey, JSON.stringify(items));
 }
+
 function buttonCheck(e) {
-    const groupebtn = document.querySelectorAll('.btn-group button');
-    groupebtn.forEach(button => {
+    const groupBtn = document.querySelectorAll('.btn-group button');
+    groupBtn.forEach(button => {
         button.classList.remove('active');
     });
 
     this.classList.add('active');
     const filterCategory = this.getAttribute('data-filter');
-    //console.log(filterCategory)
-
-    filterTasks(filterCategory)
+    filterTasks(filterCategory);
 }
 
 function filterTasks(category) {
@@ -99,9 +108,7 @@ function filterTasks(category) {
     tasks.forEach(task => {
         const isDone = task.querySelector('.form-check-input').checked;
 
-        if (category === 'todo' && !isDone) {
-            task.style.display = 'flex';
-        } else if (category === 'done' && isDone) {
+        if ((category === 'todo' && !isDone) || (category === 'done' && isDone)) {
             task.style.display = 'flex';
         } else if (category === 'all') {
             task.style.display = 'flex';
@@ -111,10 +118,12 @@ function filterTasks(category) {
     });
 }
 
-function init(){
-form.addEventListener('submit', addToDom);
-lisTask.addEventListener('click', Onclicktask);
-btngroup.addEventListener('click', buttonCheck)
-improveUi()
+function init() {
+    form.addEventListener('submit', addToDom);
+    lisTask.addEventListener('click', onClickTask);
+    btngroup.addEventListener('click', buttonCheck);
+    improveUi();
+    filterTasks('all');
 }
+
 init();
