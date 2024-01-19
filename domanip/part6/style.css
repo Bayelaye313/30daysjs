@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
+
+
+:root{
+--color-gray--50: #eceff1;
+--color-gray--100: #cfd8dc;
+--color-gray--200: #b0bec5;
+--color-gray--300: #90a4ae;
+--color-gray--400: #78909c;
+--color-gray--500: #607d8b;
+--color-gray--600: #546e7a;
+--color-gray--700: #455a64;
+--color-gray--800: #37474f;
+--color-gray--900: #263238;
+--font-primary: 'Rubik', sans-serif;
+--font-secondary: 'Roboto Mono', monospace;
+--gutter-h: 2rem;
+
+}
 
 
 * {
@@ -23,4 +43,96 @@ h1 {
     font-size: 2.5rem;
     font-weight: 600;
     color: #7DF196;
+}
+
+
+.Container {
+  max-width: 60rem;
+  margin: 2rem  auto;
+}
+
+.Section {
+  width: 100%;
+  margin: 1rem  0;  
+}
+
+.TodoApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  
+}
+.TodoApp-list li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+  
+}
+.TodoApp-list label {
+  margin-left: .5rem;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-input {
+  min-height: 4rem;
+  margin: 1rem  0;
+  padding-left: var(--gutter-h/2) ;
+  font-size: 2rem;
+  color: var(--color-gray--900) ;
+  border: 1px solid var(--color-gray--100) ;
+}
+
+.Btn {
+  height:  4rem ;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-gray--50) ;
+  background-color: var(--color-gray--600) ;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.Btn--link {
+  margin-right: var(--gutter-h/2) ;
+  color:var(--color-gray--800) ;
+  background-color: white;
+}
+.Btn:hover {
+  background-color: var(--color-gray--300) ;
+  color: orange;
+  background-color: transparent;
+}
+
+.Alert {
+  margin: var(2rem)  auto; 
+}
+.Alert--error {
+  color: red;
+}
+input[type='checkbox']:checked + label {
+  color: green;
+  text-decoration: line-through;
+}
+
+.Filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.bi-trash{
+  color: red;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.bi-trash:hover{
+  color: red;
+  opacity: 1;
+
 }
