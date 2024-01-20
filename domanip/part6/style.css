@@ -53,7 +53,7 @@ h1 {
 
 .Section {
   width: 100%;
-  margin: 1rem  0;  
+  margin: 1rem  0;
 }
 
 .TodoApp {
@@ -134,5 +134,15 @@ input[type='checkbox']:checked + label {
 .bi-trash:hover{
   color: red;
   opacity: 1;
-
 }
+#clear-btn{
+  width: 25%;
+  padding: 1rem;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+#clear-btn:hover{
+  color: orangered;
+  background-color: #607d8b;
+}
+
