@@ -63,7 +63,7 @@
  
          }
          fetchuser(apiUrl);
-         */
+         
          const apiUrl = "https://jsonplaceholder.typicode.com/posts";
          const userId = 1;
          const controller = new AbortController();
@@ -92,8 +92,33 @@
          }
          fetchuser(apiUrl);
 
- 
-    </script>
+         const postData = 
+            {
+                "userId": 2,
+                "title": "pourquoi pas poster moi aussi",
+                "completed": false
+              }
+        
+              const postMethod = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postData)
+            };
+            
+            async function tryPost(apiPlaceholder) {
+                const res = await fetch(apiPlaceholder, postMethod);
+                const data = await res.json();
+            
+                if (res.ok) {
+                    console.log(data);
+                }
+            }
+            
+            tryPost('https://jsonplaceholder.typicode.com/posts');*/
+
+            </script>
     
 </body>
 </html>
