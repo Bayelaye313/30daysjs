@@ -17,7 +17,6 @@ class Animal {
             sleep()
         } 
     }
-
     // sleep()
         // energy += 20
         // console.log energy
@@ -28,13 +27,30 @@ class Animal {
 }
 class Cat extends Animal {
     // constructor: sound, canJumpHigh, canClimbTrees, color, energy
+    constructor(sound = 'Miaou', canJumpHigh = true, canClimbTrees = true, color, energy){
+        super(color, energy);
+        this.sound = sound;
+        this.canClimTrees = canClimbTrees;
+        this.canJumpHigh = canJumpHigh;
+    }
     // makeSound()
-        // console.log sound
+    makeSound(){
+        console.log('cat sound', this.sound)
+    }
 }
 class Bird extends Animal {
     // constructor: sound, canFly, color, energy
     // makeSound()
-        // console.log sound
+    constructor(sound = 'piou', canFly = true, color, energy){
+        super(color, energy);
+        this.sound = sound;
+        this.canFly = canFly;
+    }
+    // makeSound()
+    makeSound(){
+        console.log('cat sound', this.sound)
+    }
+
 }
 class HouseCat extends Cat {
     // constructor: houseCatSound, sound, canJumpHigh, canClimbTrees, color, energy
@@ -42,6 +58,16 @@ class HouseCat extends Cat {
         // if (option)
             // super.makeSound()
         // console.log(houseCatSound)
+        constructor(houseCatSound = 'minw!!', sound, canClimTrees, color, energy){
+            super(color, energy, canClimTrees, sound);
+            this.houseCatSound = houseCatSound;
+        }
+        // makeSound()
+        makeSound(option){
+            
+            console.log('cat sound', this.houseCatSound)
+        }
+    
 }
 class Tiger extends Cat {
     // constructor: tigerSound, sound, canJumpHigh, canClimbTrees, color, energy
